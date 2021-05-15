@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Home</title>
+  <link rel="stylesheet" href ="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+ </head>
+ <body>
+    <main>
+        <div class="col-lg-8 mx-auto p-3 py-md-5">
+            <div>
+                {% if object.is_criminal == True %}
+                <h1>Уровень опасности: высокий.</h1>
+                      <p> Человек может быть склонен к ассоциальному поведению, так как у него совпало много признаков, присущих преступникам и правонарушителям.
+                      </p>
+                      <img src="{{object.image.url}}" alt="connect" style="max-height:500px">
+                {% else %}
+                <h1>Уровень опасности: низкий.</h1>
+                      <p>У этого человека слабо выражены (либо не выражены) черты, присущие лицам, склонным к асоциальному поведению.</p>
+                      <img src="{{object.image.url}}" alt="connect" style="max-height:500px">
+                {% endif %}
+            </div>
+        <!-- <h2 class="pb-2 border-bottom">Columns with icons</h2> -->
+        
+
+        </div>
+    </main>
+
+ </body>
+</html>
