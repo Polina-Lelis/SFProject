@@ -9,10 +9,18 @@ class Migration(migrations.Migration):
         ('faceapp', '0003_auto_20210508_1920'),
     ]
 
-    operations = [
+    """ operations = [
         migrations.AlterField(
             model_name='photo',
             name='id',
             field=models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
         ),
-    ]
+    ] """
+
+    """ operations = [
+        migrations.AlterField(
+            model_name='photo',
+            name='id',
+            field=models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
+        ),
+    ] """
