@@ -23,16 +23,16 @@ jobs:
 
     - uses: azure/docker-login@v1
       with:
-        login-server: sfproject.azurecr.io
+        login-server: docker.pkg.github.com
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
     - run: |
-        docker build . -t sfproject.azurecr.io/SafeFace:${{ github.sha }}
-        docker push sfproject.azurecr.io/SafeFace:${{ github.sha }}     
+        docker build . -t docker.pkg.github.com/Polina-Lelis/SFProject/SafeFace:${{ github.sha }}
+        docker push docker.pkg.github.com/Polina-Lelis/SFProject/SafeFace:${{ github.sha }}     
 
     - uses: azure/webapps-deploy@v2
       with:
         app-name: 'SafeFace'
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        images: 'sfproject.azurecr.io/SafeFace:${{ github.sha }}'
+        images: 'docker.pkg.github.com/Polina-Lelis/SFProject/SafeFace:${{ github.sha }}'
