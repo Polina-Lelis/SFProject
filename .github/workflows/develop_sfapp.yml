@@ -33,7 +33,6 @@ jobs:
     - name: Run Tests
       run: |
         python manage.py test        
-
     - name: Build using AppService-Build
       uses: azure/appservice-build@v2
       with:
