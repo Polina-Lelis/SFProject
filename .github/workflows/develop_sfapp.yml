@@ -5,8 +5,7 @@ name: Azure App Service - SFapp(Production), Build and deploy Python app
 
 on:
   push:
-    branches:	
-    - master	
+    branches:		
     - develop		
   pull_request:		
     branches:	
@@ -30,6 +29,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        pip install django-pyodbc-azure
     - name: Run Tests
       run: |
         python manage.py test        
