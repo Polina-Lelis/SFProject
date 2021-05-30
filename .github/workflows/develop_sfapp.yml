@@ -24,6 +24,14 @@ jobs:
     # checkout the repo
     - name: 'Checkout Github Action'
       uses: actions/checkout@master
+    - uses: azure/login@v1
+      with:
+       creds: ${{ secrets.AZURE_CREDENTIALS }}
+       
+    - uses: azure/sql-action@v1
+      with:
+       server-name: safeface
+       connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
 
     - name: Set up Python version
       uses: actions/setup-python@v1
@@ -42,6 +50,7 @@ jobs:
         pip install django-pyodbc-azure 
         pip install azure-cognitiveservices-vision-face
         pip install matplotlib
+        
     - name: Build using AppService-Build
       uses: azure/appservice-build@v2
       with:
