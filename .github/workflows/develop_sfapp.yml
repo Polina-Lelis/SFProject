@@ -14,6 +14,7 @@ on:
 env:
   WORKING_DIRECTORY: '.'
   PYTHON_VERSION: '3.8'
+  STARTUP_COMMAND: '' 
 
 jobs:
   build-and-deploy:
@@ -32,11 +33,11 @@ jobs:
     - name: Install dependencies
       working-directory: ${{ env.WORKING_DIRECTORY }}
       run: |
-        python -m pip install --upgrade pip
         sudo apt install python${{ env.PYTHON_VERSION }}-venv
         python -m venv --copies antenv
         source antenv/bin/activate
         pip install setuptools
+        python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install django-pyodbc-azure 
         pip install azure-cognitiveservices-vision-face
@@ -53,4 +54,6 @@ jobs:
         app-name: SFapp
         slot-name: Production
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_23A6D047141946629713AF22B4C3C4FE }}
+        package: ${{ env.WORKING_DIRECTORY }}
+        startup-command: ${{ env.STARTUP_COMMAND }}
 
