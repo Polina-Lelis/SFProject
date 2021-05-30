@@ -93,7 +93,7 @@ DATABASES = {
          'HOST': 'safeface.database.windows.net',
          'PORT': '1433',
          'OPTIONS': {
-             'driver': 'ODBC Driver 17 for SQL Server',
+             'driver': 'SQL Server Native Client 11.0',
              'use_returning_into': False,
          }
      }
