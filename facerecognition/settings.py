@@ -89,7 +89,7 @@ DATABASES = {
          'ENGINE': 'sql_server.pyodbc',
          'NAME': 'SafeFace',
          'USER': 'lelis',
-         'PASSWORD': 'Polina1805',
+         'PASSWORD': 'Polina1805-',
          'HOST': 'safeface.database.windows.net',
          'PORT': '1433',
          'OPTIONS': {
