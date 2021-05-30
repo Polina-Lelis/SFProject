@@ -97,10 +97,10 @@ WSGI_APPLICATION = 'facerecognition.wsgi.application'
              'use_returning_into': False,
          }
      }
- } """
+ } 
 
 DATABASE_CONNECTION_POOLING = False
-
+"""
 
 
 # Password validation
